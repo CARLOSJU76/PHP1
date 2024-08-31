@@ -1,0 +1,30 @@
+.hastaDos{
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    color:yellow;
+    background-color: black;
+    width: 50px;
+}
+.hasta5{
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    color:green;
+}
+.masDe5{
+    font-size: 40px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color:red;
+
+}
+.color1{
+    color:yellow;
+}
+.color2{
+    color:blue;
+}
+.color3{
+    color:red;
+}
+.color0{
+    color:violet;
+}
