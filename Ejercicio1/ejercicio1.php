@@ -27,7 +27,10 @@
     }else{
        echo "Los números no cumplen los requerimientos para emitir un resultado.";
     }
-     //función para sumar digitos  de numero1 y numero2:
+
+   
+
+    //función para sumar digitos  de numero1 y numero2:
     function sumaDigitos($num1, $num2){
         $num1 = abs($num1);
         $num2 = abs($num2);
@@ -50,7 +53,10 @@
    $sumat=$suma1+$suma2;
     return $sumat;
 
-    }         
+    }   
+       
+       
+
     //función para determinar si la diferencia de los números es número primo:
 
         function esPrimo($x){
@@ -71,6 +77,8 @@
                 echo"<br><br>";
                 return $primo;
             }
+    
+
         }
        
     //Verificando si la diferencia es un número que termina en 7:
@@ -78,7 +86,9 @@
         $dig_dife=0;
         $dig_dife=$x%10;
         return $dig_dife;
-        }     
+        }
+
+      
 
         //Descomponiendo los dos números en sus dígitos:
         
@@ -105,8 +115,11 @@
 
             }else{
                 echo $Array_num1[$i] . "-";
-            }            
-        }        
+            }
+            
+        }
+
+        
         //numero2:
 
         $Array_num2=[];
@@ -129,5 +142,9 @@
                 echo $Array_num2[$i] . "-";
             }            
         }
-    }   
+
+    } 
+    
+    
+   
 ?>

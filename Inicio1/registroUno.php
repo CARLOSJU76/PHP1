@@ -26,7 +26,7 @@ $veriUs->bind_param("s", $usuario);
 $veriUs->execute();
 $veriUs->bind_result($conteo);
 $veriUs->fetch();
-echo "Numero de usuarios: $conteo";
+
 $veriUs->close();
 
 //Verificando si existen registros con el mismo email:
@@ -36,7 +36,7 @@ $veriUs->close();
     $veriEm->execute();
     $veriEm->bind_result($conteo1);
     $veriEm->fetch();
-    echo "Numero de correos: $conteo1";
+
     $veriEm->close();
 
 if($conteo>0 || $conteo1>0){
@@ -50,7 +50,7 @@ $password_hashed = password_hash($password, PASSWORD_DEFAULT);
 $sql = "INSERT INTO lista_registro (user, email, passw) VALUES ('$usuario', '$email', '$password_hashed')";
 
 if ($conn->query($sql) === TRUE) {
-    echo "Bienvenido, $usuario ha sido registrado exitosamente";
+    echo "Bienvenido, $usuario el registro ha sido exitoso.";
     echo"<br><br>";
     
 

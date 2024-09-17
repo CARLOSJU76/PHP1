@@ -56,23 +56,14 @@
    
     //Ciclo numeros del segundo al primero: 
     function deDosAUno($x,$y){
-        if($y-$x===0){
-            echo "La diferencia es cero: No existen otros números entre los números dados.";
-        }elseif($y-$x===1){
-            echo "La diferencia es uno. No existen otros números entre los números dados.";
-        }else{
-            for($i=$y+1; $i<$x; $i++){
-
-                if ($i==$x-1){
-                    echo $i .".";
-                }else if($i==$x-2){
-                    echo $i . " y ";
-                }else{
-                    echo $i . ", ";
-                }
+        for($i=$y+1; $i<$x; $i++){
+            if ($i==$x-1){
+                echo $i .".";
+            }else if($i==$x-2){
+                echo $i . " y ";
+            }else{
+                echo $i . ", ";
             }
-
         }
-        
     }
 ?>
