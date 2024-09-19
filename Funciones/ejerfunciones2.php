@@ -104,23 +104,18 @@
         }else{
             echo '<p style="color: red; font-size: 20px;"><i>Resultado: 0</i></p>';
         }
-
+        
     }
 
-     /*   if(isset($_POST['texto'])){
+    /*   if(isset($_POST['texto'])){
             $texto=($_POST['texto']);
             $textoArray= str_split($texto);
             
            foreach ($textoArray as $i => $letra){
             if($letra!=" "){
                 echo ($i + 1) . '.- "' . $letra . '"<br>';
-            }
-
-            
-           }
-
-   */
-
-    
+            }            
+        }
+   */  
 
 ?>

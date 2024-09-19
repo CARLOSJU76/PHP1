@@ -27,7 +27,7 @@
 
     function recibirNumero(){
             if(isset($_POST['numero'])){
-                $x=$_POST['numero'];
+                $x=gmp_init($_POST['numero']);//método gmp_init ----> para manejar valores númericos grandes.
                 return $x;
             }
     }
