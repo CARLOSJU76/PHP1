@@ -10,7 +10,7 @@ enum Cargo {
 class EmpleadoFijo extends Empleado {
     private Cargo $cargo;
 
-    private const SALARIO_OBRERO = 1500000;
+   // private const SALARIO_OBRERO = 1500000;
     private const SALARIO_ADMINISTRATIVO = 2000000;
     private const SALARIO_GERENCIAL = 4000000;
 
@@ -24,7 +24,7 @@ class EmpleadoFijo extends Empleado {
         $salarioF = 0;
         switch ($this->cargo) {
             case Cargo::OBRERO:
-                $salarioF = self::SALARIO_OBRERO;
+                $salarioF = 1800000;
                 break;
             case Cargo::ADMINISTRATIVO:
                 $salarioF = self::SALARIO_ADMINISTRATIVO;
@@ -42,6 +42,6 @@ class EmpleadoFijo extends Empleado {
 }
 
 //Instanciar el objeto correctamente
-$emp2 = new EmpleadoFijo('Peppito', 0, Cargo::GERENCIAL);
+$emp2 = new EmpleadoFijo('Peppito', 0, Cargo::OBRERO);
 $emp2->mostrarSalario();
 ?>
