@@ -57,14 +57,14 @@
     //==================================================================================================================
 //Instanciando Clases: 
 
-    $rectangulo1= new Rectangulo(20, 20, 0);
-    $rectangulo1->mostrarArea();
+    //$rectangulo1= new Rectangulo(20, 20, 0);
+    //$rectangulo1->mostrarArea();
 
     //$cuadrado1= new Cuadrado( 10, 0, 0 );
     //$cuadrado1->mostrarArea();  
    
-   // $triangulo1=new Triangulo(5, 4, 0);
-    //$triangulo1->mostrarArea();
+   $triangulo1=new Triangulo(5, 4, 0);
+    $triangulo1->mostrarArea();
 
 
 

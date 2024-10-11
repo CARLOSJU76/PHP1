@@ -27,11 +27,11 @@
     $vehiculo1= new Transporte("Toyota", 2020) ;
     $vehiculo1->mostrarVehiculo();
 
-    enum Modalidad{
+    enum 
+    d{
         case CARRRERAS;
         case TODOTERRENO;
         case BMX;
-
     }
 
 class Bicicleta extends Transporte{

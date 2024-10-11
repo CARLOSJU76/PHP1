@@ -10,8 +10,8 @@ enum Cargo {
 class EmpleadoFijo extends Empleado {
     private Cargo $cargo;
 
-   // private const SALARIO_OBRERO = 1500000;
-    private const SALARIO_ADMINISTRATIVO = 2000000;
+    //private const SALARIO_OBRERO = 1500000;
+    //private const SALARIO_ADMINISTRATIVO = 2000000;
     private const SALARIO_GERENCIAL = 4000000;
 
     public function __construct($nombre, $salario, Cargo $cargo) {
@@ -27,7 +27,7 @@ class EmpleadoFijo extends Empleado {
                 $salarioF = 1800000;
                 break;
             case Cargo::ADMINISTRATIVO:
-                $salarioF = self::SALARIO_ADMINISTRATIVO;
+                $salarioF = 2700000;
                 break;
             case Cargo::GERENCIAL:
                 $salarioF = self::SALARIO_GERENCIAL;
