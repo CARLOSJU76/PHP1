@@ -1,10 +1,10 @@
 <?php
     
-    enum Marcas{
-        case Toyota;
-        case Chevrolet;
-        case Renault;
-        case Ford;
+    enum Marcas: string{
+        case Toyota="Toyota";
+        case Chevrolet="Chevrolet";
+        case Renault="Renault";
+        case Ford="Ford";
     }
         
     class Transporte {
