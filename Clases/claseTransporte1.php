@@ -1,10 +1,10 @@
 <?php
     
-    enum Marcas{
-        case Toyota;
-        case Chevrolet;
-        case Renault;
-        case Ford;
+    enum Marcas: string{
+        case Toyota="Toyota";
+        case Chevrolet="Chevrolet";
+        case Renault="Renault";
+        case Ford="Ford";
     }
         
     class Transporte {
@@ -48,18 +48,15 @@
 
     if (isset($_POST['Enviar'])){
 
-        $placa= $_POST['placa'];
-        $marca=$_POST['marca'];
-        $modelo=$_POST['modelo'];
+        $placa=  $_POST['placa'];
+        $marca=  $_POST['marca'];
+        $modelo= $_POST['modelo'];
 
         $marcaE= Marcas::tryFrom($marca);
 
         $vehiculo1= new Transporte($placa, $marcaE, $modelo);
 
         $vehiculo1->mostrarTransporte();
-
-
-
     }
 
 
