@@ -25,7 +25,13 @@
 <?php
      include_once('funcCajero.php');
 
-    $saldo= 1000000;
+     session_start();
+     if (!isset($_SESSION['saldo'])) {
+        $_SESSION['saldo'] = 2000000; // Guardar un valor que no es un array
+    }
+    $saldo= $_SESSION['saldo'];
+
+  
 
     if(isset($_POST["Enviar"])){
 
@@ -55,6 +61,7 @@
         $valor=$_POST['Dinero'];
         $nuevaOperacion->setValor($valor);
         $nuevaOperacion->retirar();
+        $_SESSION['saldo']=$saldo;
         
     }
 
@@ -63,6 +70,7 @@
         $valor=$_POST['Dinero'];
         $nuevaOperacion->setValor($valor);
         $nuevaOperacion->consignar();
+        $_SESSION['saldo']=$saldo;
     }
 
 

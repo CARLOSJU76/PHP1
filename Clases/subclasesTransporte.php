@@ -1,44 +1,6 @@
 <?php   
-    include_once("claseTransporte.php");
-
-    class Coche extends Transporte{
-
-        private $placa;
-        private $num_puertas;
-
-        public function __construct($marca,$modelo, $placa, $num_puertas){
-
-            parent::__construct($marca,$modelo) ;
-            $this->placa = $placa;
-            $this->num_puertas = $num_puertas;
-            $this->getMarca();
-            $this->getModelo();
-       }
-       public function setPlaca($placa){
-        $this->placa = $placa;
-       }
-       public function getPlaca(){
-        return $this->placa;
-
-    }
-    public function setNum_puertas($num_puertas){
-        $this->num_puertas = $num_puertas;
-    }
-    public function getNum_puertas(){
-        return $this->num_puertas;
-    }
-    public function mostrarCoche(){
-        echo"Los datos del vehículo son: <br>
-            Marca:" .$this->getMarca() . "<br>
-            Modelo:" .$this->getModelo() ."<br>
-            Placa:" .$this->placa ."<br>
-            Número de Puertas:" .$this->num_puertas ."<br><br><br>.";
-    }
+    include_once('claseTransporte.php');
     
-}
-$coche1=new Coche("Mazda", 2018, "HQX330", 4);
-$coche1->mostrarCoche(); 
-
 enum Chasis{
     case ENDURO;
     case SPORT;
