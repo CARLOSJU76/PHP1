@@ -19,7 +19,7 @@
                 "Placa: ".$this->getPlaca()."<br>".
                 "Marca: ".$this->getMarca(). "<br>".
                 "Combustible: ".$this->getCombustible()."<br>".
-                "Carga: ".$this->carga. "<br><br>";
+                "Carga: ".$this->carga. " % <br><br>";
         
             }
     }
