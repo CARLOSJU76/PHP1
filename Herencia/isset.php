@@ -65,7 +65,7 @@
       include_once('Vehiculo.php');
       $vehi1= new Vehiculo($placa, $marca);
       $vehi1->mostrar();
-      echo"<br><input type='submit' onclick='volverMenu()' class='volver' value='volver'>";
+      echo"<button><a href='index.php' style='text-decoration: none;' >Volver</a></button>";
     }
     if(isset($_POST['consultara'])){
       $placa=$_POST['placa'];
@@ -74,7 +74,8 @@
       include_once('Automovil.php');
       $auto1= new Automovil($placa, $marca, $combustible);
       $auto1->mostrar();
-      echo"<br><input type='submit' class='volver' value='volver'>";
+      
+      echo"<button><a href='index.php' style='text-decoration: none;' >Volver</a></button>";
     }
     if(isset($_POST['consultarh'])){
       $placa=$_POST['placa'];
@@ -84,7 +85,8 @@
       include_once('Hibrido.php');
       $hibri1= new Hibrido($placa, $marca, $combustible, $carga);
       $hibri1->mostrar();
-      echo"<br><input type='submit' class='volver' value='volver'>";
+      
+      echo"<button><a href='index.php' style='text-decoration: none;' >Volver</a></button>";
     }
     if(isset($_POST['consultarm'])){
       $placa=$_POST['placa'];
@@ -93,7 +95,8 @@
       include_once('Moto.php');
       $mot1= new Moto($placa, $marca, $chasis);
       $mot1->mostrar();
-      echo"<br><input type='submit' class='volver' value='volver'>";
+      
+      echo"<button><a href='index.php' style='text-decoration: none;' >Volver</a></button>";
     }
     if(isset($_POST['consultarmE'])){
       $placa=$_POST['placa'];
@@ -103,7 +106,8 @@
       include_once('MotoElectrica.php');
       $mot1= new MotoElectrica($placa, $marca, $chasis, $bateria);
       $mot1->mostrar();
-      echo"<br><input type='submit' class='volver' value='volver'>";
+      
+      echo"<button><a href='index.php' style='text-decoration: none;' >Volver</a></button>";
     }
 
 ?>

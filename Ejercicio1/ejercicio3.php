@@ -1,6 +1,10 @@
 <?php
-   $numero1=$_POST["numero1"];
-   $numero2=$_POST["numero2"];
+   $num1=$_POST["numero1"];
+   $num2=$_POST["numero2"];
+
+   $numero1=(float)$num1;
+   $numero2=(float)$num2;
+
    $diferencia= abs($numero1-$numero2);
    $menor= mayorMenor($numero1, $numero2);
    
