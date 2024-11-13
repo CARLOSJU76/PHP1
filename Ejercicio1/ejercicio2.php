@@ -1,6 +1,7 @@
 <?php
 
-$numero1=$_POST["numero1"];
+$num1=$_POST["numero1"];
+$numero1=(float)$num1;
      $resultado=0;
 
       $resultado= operacion($numero1, $numero1);
@@ -19,11 +20,11 @@ $numero1=$_POST["numero1"];
          echo "El número no cumple los parámetros.";
       }else{
          if($termina==1){
-            echo primerDigito($y);
+            echo "El número termina en UNO y su primer dígito es: " .primerDigito($y);
          }else if($termina==2){
-            echo sumaDigitos($y);
+            echo "El número termina en DOS y la suma de sus dígitos es: ".sumaDigitos($y);
          }else if($termina==3){
-            echo multiDigitos($y);
+            echo "El número termina en TRES y la multiplicación de sus dígitos es: " .multiDigitos($y);
          }else{
             echo "El número no termina en 1, 2 o 3.";
          }
