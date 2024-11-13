@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Aquí puedes definir la función
     function ocultarElemento(){
         elemento.className = 'ocultos';
+        alert("Elemento oculto");
     }
     function volverMenu(){
         elemento.style.display='block';
