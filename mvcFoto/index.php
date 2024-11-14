@@ -31,7 +31,17 @@
         case 'searchUserByName':
             $users= $userController->UsersByName();
             include './views/list_user_By_Name_Form.php';
-            break;     
+            break;   
+            
+        case 'searchProducts':
+            $products= $userController->getProducts();
+            include './views/list_Products.php';
+            break;
+
+        case 'searchProductByName':
+            $products= $userController->productsByName();
+            include './views/list_Product_By_Name.php';
+            break;
         
         default:
             include_once('views/dashboard.php');

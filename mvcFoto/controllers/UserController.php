@@ -56,5 +56,12 @@
         $name=$_GET['name'] ?? '';
         return $this->userModel->getUsersByName($name);
     }
+    public function getProducts(){
+        return $this->userModel->getProducts();
+    }
+    public function productsByName(){
+        $name=$_GET['name'] ?? '';
+        return $this->userModel->productsByName($name);
+    }
     }
 ?>

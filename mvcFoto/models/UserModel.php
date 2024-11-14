@@ -29,5 +29,16 @@
             $stmt->execute(['%' . $name . '%']);
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
+        public function getProducts(){
+            $query="SELECT * FROM " .$this->tablePr;
+            $stmt= $this->conn->query($query);
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }
+        public function productsByName($name){
+            $query= "SELECT * FROM " .$this->tablePr . " WHERE nombre LIKE ?";
+            $stmt= $this->conn->prepare($query);
+            $stmt->execute(['%' . $name . '%']);
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }
     }
 ?>

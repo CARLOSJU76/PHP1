@@ -23,6 +23,14 @@
     <form action="index.php?action=searchUserByName" method="GET">
         <button type="submit" name="action" value="searchUserByName">Consular Usuario por Nombre</button>
     </form>
+
+    <form action="index.php?action=searchProducts" method='post'>
+        <button type="submit" name="action" value="searchProducts">Consultar Productos</button>
+    </form>
+
+    <form action="index.php?action=searchProductByName" method="post">
+        <button type="submit" name="action" value="searchProductByName">Consultar producto por nombre</button>
+</form>
     
 </body>
 </html>
