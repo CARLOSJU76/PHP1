@@ -24,9 +24,9 @@
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
         public function getUsersByName($name){
-            $query= "SELECT * FROM " .$this->table . "WHERE nombre LIKE ?";
+            $query= "SELECT * FROM " .$this->table . " WHERE nombre LIKE ?";
             $stmt= $this->conn->prepare($query);
-            $stmt->execute(['%' .$name .'%']);
+            $stmt->execute(['%' . $name . '%']);
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
     }
