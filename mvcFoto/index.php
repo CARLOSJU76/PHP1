@@ -42,6 +42,11 @@
             $products= $userController->productsByName();
             include './views/list_Product_By_Name.php';
             break;
+
+        case 'insertTipoD':
+            $tipoD= $userController->insertTipoD();
+            include './views/insert_TipoD.php';
+            break;
         
         default:
             include_once('views/dashboard.php');

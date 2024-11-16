@@ -3,6 +3,7 @@
         private $conn;
         private $table= 'usuarios';
         private $tablePr='producto';
+        private $TipoD='tipo_documento';
 
         public function __construct($db){
             $this->conn=$db;
@@ -17,6 +18,13 @@
             $stmt=$this->conn->prepare($consulta);
             $stmt->execute([$nombre, $marca, $precio, $foto]);
         }
+        public function insertTipoD($tipo_documento){
+            $consulta="INSERT INTO " .$this->TipoD . "(tipo_documento) VALUES (?)";
+            $stmt= $this->conn->prepare($consulta);
+            $stmt->execute([$tipo_documento]);
+        }
+
+        
 
         public function getUsers(){
             $query = "SELECT*FROM " . $this->table;

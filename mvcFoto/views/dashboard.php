@@ -31,6 +31,10 @@
     <form action="index.php?action=searchProductByName" method="post">
         <button type="submit" name="action" value="searchProductByName">Consultar producto por nombre</button>
 </form>
+
+    <form action="index.php?action=insertTipoD" method="post">
+        <button type="submit" name="action" value="insertTipoD">Insertar tipo de documento</button>
+    </form>
     
 </body>
 </html>

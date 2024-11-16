@@ -46,8 +46,16 @@
 
             $this->userModel->insertProduct($nombre,$marca, $precio, $photo);
             header("Location: index.php?action=dashboard");
-
         }
+    }
+    public function insertTipoD(){
+        if($_SERVER['REQUEST_METHOD']=='POST'){
+       
+            $tipo_documento=$_POST['tipo_documento'];
+            $this->userModel->insertTipoD($tipo_documento);
+        header("Location: index.php?action=dashboard");
+        }
+        
     }
     public function listUsers(){
         return $this->userModel->getUsers();
