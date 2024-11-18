@@ -3,27 +3,38 @@
         private $conn;
         private $table= 'usuarios';
         private $tablePr='producto';
-        private $TipoD='tipo_documento';
+        private $tipoD='tipo_documento';
+        private $tipoP='tipo_producto';
+        private $compra='compra';
 
         public function __construct($db){
             $this->conn=$db;
         }
         public function insertUser($document_number, $document_type, $name, $phone, $photo){
-            $consulta= "INSERT INTO " .$this->table . "(num_docum, tipo_docum, nombre, telefono, foto) VALUES (?,?,?,?,?)";
+            $consulta= "INSERT INTO " .$this->table . "(num_docum, id_tipoD, nombre, telefono, foto) VALUES (?,?,?,?,?)";
             $stmt= $this->conn->prepare($consulta);
             $stmt->execute([$document_number, $document_type, $name, $phone, $photo]);
         }
-        public function insertProduct($nombre, $marca, $precio, $foto){
-            $consulta= "INSERT INTO " .$this->tablePr . "(nombre, marca, precio, foto) VALUES (?,?,?,?)";
+        public function insertProduct($nombre, $marca, $id_tipoP, $precio, $foto){
+            $consulta= "INSERT INTO " .$this->tablePr . "(nombre, marca, id_tipoP, precio, foto) VALUES (?,?,?,?,?)";
             $stmt=$this->conn->prepare($consulta);
-            $stmt->execute([$nombre, $marca, $precio, $foto]);
+            $stmt->execute([$nombre, $marca, $id_tipoP, $precio, $foto]);
         }
         public function insertTipoD($tipo_documento){
-            $consulta="INSERT INTO " .$this->TipoD . "(tipo_documento) VALUES (?)";
+            $consulta="INSERT INTO " .$this->tipoD . "(tipo_docum) VALUES (?)";
             $stmt= $this->conn->prepare($consulta);
             $stmt->execute([$tipo_documento]);
         }
-
+        public function insertTipoP($tipo_product){
+            $consulta="INSERT INTO " .$this->tipoP . "(tipo_product) VALUES (?)";
+            $stmt= $this->conn->prepare($consulta);
+            $stmt->execute([$tipo_product]);
+        }
+        public function insertCompra($num_docum, $id_producto){
+            $consulta="INSERT INTO " .$this->compra . "(num_docum, id_producto) VALUES(?,?)";
+            $stmt= $this->conn->prepare($consulta);
+            $stmt->execute([$num_docum, $id_producto]);        
+        }
         
 
         public function getUsers(){

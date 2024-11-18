@@ -44,10 +44,29 @@
             break;
 
         case 'insertTipoD':
-            $tipoD= $userController->insertTipoD();
-            include './views/insert_TipoD.php';
+            if($_SERVER["REQUEST_METHOD"]== "POST"){
+                $userController->insertTipoD();
+            }else {
+                include './views/insert_TipoD.php';
+            }
+                break;
+
+        case 'insertTipoP':
+            if($_SERVER["REQUEST_METHOD"]== "POST"){
+                $userController->insertTipoP();
+            }else {
+                        include './views/insert_TipoP.php';
+            }
             break;
-        
+            
+        case 'insertCompra':
+            if($_SERVER['REQUEST_METHOD']=="POST"){
+                $userController->insertCompra();
+            }else{
+                include './views/insertCompra.php';
+            }
+            break;
+
         default:
             include_once('views/dashboard.php');
             break;

@@ -21,7 +21,7 @@
             <?php foreach($users as $user): ?>
             <tr>
                 <td><?=$user['num_docum']?></td>
-                <td><?=$user['tipo_docum']?></td>
+                <td><?=$user['id_tipoD']?></td>
                 <td><?=$user['nombre']?></td>
                 <td><?=$user['telefono']?></td>
                 <td><img src="photo/<?= $user['foto']; ?>" width="100" alt="Foto"></td>

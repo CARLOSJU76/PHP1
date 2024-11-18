@@ -32,8 +32,16 @@
         <button type="submit" name="action" value="searchProductByName">Consultar producto por nombre</button>
 </form>
 
-    <form action="index.php?action=insertTipoD" method="post">
+    <form action="index.php?action=insertTipoD" method="GET">
         <button type="submit" name="action" value="insertTipoD">Insertar tipo de documento</button>
+    </form>
+
+    <form action="index.php?action=insertTipoP" method="GET">
+        <button type="submit" name="action" value="insertTipoP">Insertar tipo de producto</button>
+    </form>
+
+    <form action="index.php?action=insertCompra" method="GET">
+        <button type="submit" name="action" value="insertCompra">Insertar Compra</button>
     </form>
     
 </body>

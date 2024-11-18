@@ -3,14 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Insertar Tipo de Documento</title>
+    <title>Insertar Compra</title>
 </head>
 <body>
-    <h1>Insertar Tipo de Documento</h1>
-    <form action="index.php?action=inserTipoD"  method="post" enctype="multipart/form-data">
+    <h1>Insertar Compra</h1>
+    <form action="index.php?action=insertCompra"  method="post" enctype="multipart/form-data">
         
-        <label for="tipo_documento">Tipo de Documento</label>
-        <input type="text" name="tipo_documento" required><br>
+        <label for="num_docum">Número de documento</label>
+        <input type="text" name="num_docum" required><br>
+
+        <label for="id_producto">Id del producto</label>
+        <input type="text" name="id_producto" required><br>
 
         <input type="submit" value="Guardar"><br>
 

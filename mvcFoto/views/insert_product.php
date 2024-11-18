@@ -15,6 +15,7 @@
         
         <input type="text" name="marca" placeholder="Marca del producto" required><br>
 
+        <input type="text" name="id_tipoP" placeholder="id del producto"><br>
        
         <input type="text" name="precio" placeholder="Precio del producto" required><br>
 
@@ -26,6 +27,7 @@
         <form action="index.php?action=dashboard" method="post"><br>
             <button type="submit" name="action" value=" dashboard">Dashboard</button>
         </form>
+    </form>
 
 </body>
 </html>
