@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>Insertar Tipo de Documento</h1>
-    <form action="index.php?action=inserTipoD"  method="post" enctype="multipart/form-data">
+    <form action="index.php?action=insertTipoD"  method="post" enctype="multipart/form-data">
         
         <label for="tipo_documento">Tipo de Documento</label>
         <input type="text" name="tipo_documento" required><br>

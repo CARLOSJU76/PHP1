@@ -21,12 +21,12 @@
             $stmt->execute([$nombre, $marca, $id_tipoP, $precio, $foto]);
         }
         public function insertTipoD($tipo_documento){
-            $consulta="INSERT INTO " .$this->tipoD . "(tipo_docum) VALUES (?)";
+            $consulta="INSERT INTO " .$this->tipoD . "(tipo_documento) VALUES (?)";
             $stmt= $this->conn->prepare($consulta);
             $stmt->execute([$tipo_documento]);
         }
         public function insertTipoP($tipo_product){
-            $consulta="INSERT INTO " .$this->tipoP . "(tipo_product) VALUES (?)";
+            $consulta="INSERT INTO " .$this->tipoP . "(tipo_producto) VALUES (?)";
             $stmt= $this->conn->prepare($consulta);
             $stmt->execute([$tipo_product]);
         }
