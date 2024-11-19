@@ -13,7 +13,20 @@
         <input type="text" name="numero_documento" required><br>
 
         <label for="tipo_documento">Tipo de Documento</label>
-        <input type="text" name="tipo_documento" required><br>
+        <!-- <input type="text" name="tipo_documento" required><br> -->
+         <select name="tipo_documento" id="tipo_documento">
+            <option value="">Elija el tipo de documento</option>
+            <?php
+                include_once('./controllers/UserController.php');
+                    $tipoD= new $userController();
+                    $arrayTipoD= $tipoD->getTipoD();
+                
+                foreach($arrayTipoD as $tipo){
+                    echo "<option value='".htmlspecialchars($tipo['id'])."'>"
+                    .htmlspecialchars($tipo['tipo_documento'])."</option>";
+                }
+            ?>
+         </select><br>
 
         <label for="nombre">Nombre</label>
         <input type="text" name="nombre" required><br>

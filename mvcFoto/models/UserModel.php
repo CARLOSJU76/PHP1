@@ -64,5 +64,20 @@
             $stmt=$this->conn->query($query);
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
+        public function getTipoD(){
+            $query= "SELECT * FROM " .$this->tipoD;
+            $stmt= $this->conn->query($query);
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }
+        public function getNumD(){
+            $query= "SELECT num_docum, nombre FROM ".$this->table;
+            $stmt= $this->conn->query($query);
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }
+        public function getProducto(){
+            $query= "SELECT id, nombre FROM " .$this->tablePr;
+            $stmt= $this->conn->query($query);
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }
     }
 ?>

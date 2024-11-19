@@ -90,5 +90,14 @@
     public function getTipoP(){
         return $this->userModel->getTipoP();
     }
+    public function getTipoD(){
+        return $this->userModel->getTipoD();
+    }
+    public function getNumD(){
+        return $this->userModel->getNumD();
+    }
+    public function getProducto(){
+        return $this->userModel->getProducto();
+    }
     }
 ?>

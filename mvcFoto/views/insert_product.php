@@ -17,7 +17,7 @@
 
         <!-- <input type="text" name="id_tipoP" placeholder="id del producto"><br> -->
 
-        <select name="tipo_producto" id="tipo_producto">
+        <select name="id_tipoP" id="id_tipoP">
             <option value="">Seleccione tipo de Producto</option>
             <?php
                 include_once('./controllers/UserController.php');
@@ -26,7 +26,7 @@
                 $arrayTipoP= $tipoP->getTipoP();
 
                 foreach($arrayTipoP as $tipo){
-                    echo "<option value='" .htmlspecialchars($tipo['id']) . " '>" .htmlspecialchars($tipo['tipo_producto']) . "</option>";
+                    echo "<option value='" .htmlspecialchars($tipo['id']) . " '>".($tipo['id']) .htmlspecialchars($tipo['tipo_producto']) . "</option>";
                 }
             ?>
         </select><br>
