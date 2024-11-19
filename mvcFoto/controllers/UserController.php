@@ -87,5 +87,8 @@
         $name=$_GET['name'] ?? '';
         return $this->userModel->productsByName($name);
     }
+    public function getTipoP(){
+        return $this->userModel->getTipoP();
+    }
     }
 ?>

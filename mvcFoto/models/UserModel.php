@@ -59,5 +59,10 @@
             $stmt->execute(['%' . $name . '%']);
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
+        public function getTipoP(){
+            $query="SELECT * FROM " .$this->tipoP;
+            $stmt=$this->conn->query($query);
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }
     }
 ?>

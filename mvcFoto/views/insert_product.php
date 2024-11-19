@@ -15,7 +15,21 @@
         
         <input type="text" name="marca" placeholder="Marca del producto" required><br>
 
-        <input type="text" name="id_tipoP" placeholder="id del producto"><br>
+        <!-- <input type="text" name="id_tipoP" placeholder="id del producto"><br> -->
+
+        <select name="tipo_producto" id="tipo_producto">
+            <option value="">Seleccione tipo de Producto</option>
+            <?php
+                include_once('./controllers/UserController.php');
+
+                $tipoP= new UserController();
+                $arrayTipoP= $tipoP->getTipoP();
+
+                foreach($arrayTipoP as $tipo){
+                    echo "<option value='" .htmlspecialchars($tipo['id']) . " '>" .htmlspecialchars($tipo['tipo_producto']) . "</option>";
+                }
+            ?>
+        </select><br>
        
         <input type="text" name="precio" placeholder="Precio del producto" required><br>
 
