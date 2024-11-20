@@ -12,6 +12,10 @@
         <button type="submit" name="action" value="insertUser">Insertar Usuario</button>
     </form>
 
+    <form action="index.php?action=updateUser" method="GET">
+        <button type="submit" name="action" value="updateUser">Actualizar Usuario</button>
+    </form>
+
     <form action="index.php?action=insertProduct" method="GET">
         <button type="submit" name="action" value="insertProduct">Insertar Producto</button>
     </form>
@@ -43,6 +47,7 @@
     <form action="index.php?action=insertCompra" method="GET">
         <button type="submit" name="action" value="insertCompra">Insertar Compra</button>
     </form>
+
     
 </body>
 </html>

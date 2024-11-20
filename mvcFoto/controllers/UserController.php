@@ -33,6 +33,25 @@
                 header("Location: index.php?action=dashboard");
             }
         }
+        public function updateUser(){
+            if($_SERVER["REQUEST_METHOD"]=="POST"){
+                $num_docum=$_POST['num_docum'];
+                $id_tipoD= $_POST['id_tipoD'];
+                $nombre= $_POST['nombre'];
+                $telefono=$_POST['telefono'];
+                $foto= $_FILES['foto']['name'] ? $_FILES['foto']['name']:null; //borrando archivo de imagen
+    
+                if($foto){
+                    $target_dir="photo/";
+                    $target_file=$target_dir.basename($foto);
+                    move_uploaded_file($_FILES['foto']['tmp_name'], $target_file);
+                }else{
+                    $foto=$_POST['foto_actual'];//Mantener la foto actual
+                }
+    
+                $this->userModel->updateUser($num_docum, $id_tipoD, $nombre, $telefono, $foto)
+            }
+        }
     public function insertProduct(){
         if($_SERVER['REQUEST_METHOD']=='POST'){
             $nombre=$_POST['nombre'];
@@ -99,5 +118,6 @@
     public function getProducto(){
         return $this->userModel->getProducto();
     }
+    
     }
 ?>
