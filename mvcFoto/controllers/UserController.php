@@ -49,7 +49,7 @@
                     $foto=$_POST['foto_actual'];//Mantener la foto actual
                 }
     
-                $this->userModel->updateUser($num_docum, $id_tipoD, $nombre, $telefono, $foto)
+                $this->userModel->updateUser($num_docum, $id_tipoD, $nombre, $telefono, $foto);
             }
         }
     public function insertProduct(){
@@ -98,6 +98,10 @@
     public function UsersByName(){
         $name=$_GET['name'] ?? '';
         return $this->userModel->getUsersByName($name);
+    }
+    public function getUserByNumD(){
+        $num_docum=$_GET['num_docum'] ??'';
+        return $this->userModel->getUserByNumD($num_docum);
     }
     public function getProducts(){
         return $this->userModel->getProducts();

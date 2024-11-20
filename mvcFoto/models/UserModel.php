@@ -48,6 +48,12 @@
             $stmt->execute(['%' . $name . '%']);
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
+        public function getUserByNumD($num_docum){
+            $query= "SELECT * FROM " .$this->table . " WHERE num_docum=?";
+            $stmt= $this->conn->prepare($query);
+            $stmt->execute([$num_docum]);
+            return  $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }
         public function getProducts(){
             $query="SELECT * FROM " .$this->tablePr;
             $stmt= $this->conn->query($query);

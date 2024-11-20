@@ -66,6 +66,11 @@
                 include './views/insertCompra.php';
             }
             break;
+        case 'openForm':
+            $users=$userController->listUsers();
+            $buscado=$userController->getUserByNumD();
+            include './views/list_user_By_Num_Docum.php';
+            break;
 
         default:
             include_once('views/dashboard.php');

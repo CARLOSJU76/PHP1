@@ -12,8 +12,8 @@
         <button type="submit" name="action" value="insertUser">Insertar Usuario</button>
     </form>
 
-    <form action="index.php?action=updateUser" method="GET">
-        <button type="submit" name="action" value="updateUser">Actualizar Usuario</button>
+    <form action="index.php?action=openForm" method="GET">
+        <button type="submit" name="action" value="openForm">Actualizar Usuario por Número de Documento</button>
     </form>
 
     <form action="index.php?action=insertProduct" method="GET">
