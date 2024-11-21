@@ -6,8 +6,8 @@
     <title>Buscar Usuario por Número de Documento</title>
 </head>
 <body>
-    <form action="index.php?action=list_user_By_Num_Docum" method="get">
-        <!-- <input type="hidden" name="action" value="list_user_By_Num_Docum"> -->
+    <form action="index.php?action=openForm" method="get">
+        <input type="hidden" name="action" value="openForm">
         <label for="num_docum">Número de Documento</label>
         <!-- <input type="text" name="name" required> -->
         <select name="num_docum" id="num_docum">
@@ -24,7 +24,7 @@
             ?>
         </select><br>
 
-        <input type="submit" value="Buscar">
+        <button type="submit" name="action" value="openForm">Buscar</button>
     </form>
 
     <?php if(isset($users) && count($users)>0):?>
@@ -55,6 +55,9 @@
             <p>No se encontraron usuarios con ese nombre</p>
 
             <?php endif;?>
+            <form action="index.php?action=updateUser" method="post">
+                <button type="submit" name="action" value="updateUser">Actualizar datos</button>
+            </form><br>
             <form action="index.php?action=dashboard" method='post' enctype="multipart/form-data">
                 <button type="submit" name="action" value="dashboard">Dashboard</button>
         </form>

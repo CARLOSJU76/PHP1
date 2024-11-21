@@ -49,7 +49,7 @@
                     $foto=$_POST['foto_actual'];//Mantener la foto actual
                 }
     
-                $this->userModel->updateUser($num_docum, $id_tipoD, $nombre, $telefono, $foto);
+                $this->userModel->updateUser($num_docum, $id_tipoD, $nombre, $telefono, $foto, $num_docum1);
             }
         }
     public function insertProduct(){

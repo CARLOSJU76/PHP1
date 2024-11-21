@@ -85,10 +85,10 @@
             $stmt= $this->conn->query($query);
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
-        public function updateUser($num_docum, $id_tipoD, $nombre, $telefono, $foto){
+        public function updateUser($num_docum, $id_tipoD, $nombre, $telefono, $foto, $num_docum1){
             $query= "UPDATE ".$this->table . " SET num_docum=?, id_tipoD=?, nombre=?, telefono=?, foto=? WHERE num_docum=?";
             $stmt=$this->conn->prepare($query);
-            $stmt->execute([$num_docum, $id_tipoD, $nombre, $telefono, $foto, $num_docum]);
+            $stmt->execute([$num_docum, $id_tipoD, $nombre, $telefono, $foto, $num_docum1]);
         }
     }
 ?>

@@ -9,8 +9,21 @@
     <h1>Buscar Usuario por Nombre</h1>
     <form action="index.php?action=searchUserByName" method="get">
         <input type="hidden" name="action" value="searchUserByName">
-        <label fro="name">Nombre</label>
-        <input type="text" name="name" required>
+        <label for="name">Nombre</label>
+        <!-- <input type="text" name="name" required> -->
+         <select name="name">
+            <option value="">Elija un Nombre</option>
+            <?php
+                include_once('./controllers/UserController.php');
+                $nombre= new UserController();
+                $nombres= $nombre->getNumD();
+
+                foreach($nombres as $nom){
+                    echo"<option value='" .htmlspecialchars($nom['nombre'])."'>".
+                        htmlspecialchars($nom['nombre'])."</option>";
+                }
+            ?>
+         </select>
         <input type="submit" value="Buscar">
     </form>
 

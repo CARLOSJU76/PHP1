@@ -68,9 +68,19 @@
             break;
         case 'openForm':
             $users=$userController->listUsers();
-            $buscado=$userController->getUserByNumD();
+            $users=$userController->getUserByNumD();
+            
+          
             include './views/list_user_By_Num_Docum.php';
             break;
+        
+        case 'updateUser':
+            if($_SERVER["REQUEST_METHOD"]== "POST"){
+                $userController->updateUser();
+            }else {
+                include './views/updateUserForm.php';
+            }
+                break;
 
         default:
             include_once('views/dashboard.php');
