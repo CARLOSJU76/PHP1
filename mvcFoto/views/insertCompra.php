@@ -41,6 +41,8 @@
         ?>
 
          </select><br>
+         <input type="date" name="fecha" placeholder="Elija la fecha">
+         <input type="time" name="hora"placeholder="Elija la hora">
 
         <input type="submit" value="Guardar"><br>
 

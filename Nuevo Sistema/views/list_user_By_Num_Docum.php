@@ -7,7 +7,7 @@
 </head>
 <body>
     <form action="index.php?action=openForm" method="get">
-    <input type="hidden" name="action" value="openForm">
+        
         <label for="num_docum">Número de Documento</label>
         
         <select name="num_docum" id="num_docum">
@@ -24,14 +24,13 @@
             ?>
         </select><br>
 
-        <input type="submit" value="Buscar">
+        <button type="submit" name="action" value="openForm">Buscar</button>
         
     </form>
-
     <form action="index.php?action=updateUser" method="get">
         <input type="hidden" name="num_docum" value="<?= $_GET['num_docum'] ?? '' ?>">
-        <button type="submit" name="action" value="updateUser">Actualizar datos</button>
-    </form><br>
+                <button type="submit" name="action" value="updateUser">Actualizar datos</button>
+            </form><br>
 
     <?php if(isset($users) && count($users)>0):?>
         <h2>Resultados de la búsqueda</h2>

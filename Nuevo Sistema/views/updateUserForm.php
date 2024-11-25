@@ -35,7 +35,7 @@
         <input type="text" name="nombre" value="<?= $userData[0]['nombre'] ?? ''?>" placeholder="Nombre del Usuario"><br>
         <label for="telefono">Teléfono de Usuario:</label>
         <input type="text" name="telefono" value="<?= $userData[0]['telefono'] ?? ''?>" placeholder="Teléfono"><br>
-        <img src="photo/<?= $userData[0]['foto'] ?? '' ?>" width="100px" alt="Foto actual"><br>
+        <img src="photo/<?= $userData[0]['foto'] ?? ''?>" width="100px" alt="Foto actual"><br>
         <input type="file" name="foto" placeholder="Elija una imagen"><br>
 
                     <input type="submit" value="actualizar Usuario"><br> 

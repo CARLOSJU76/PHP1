@@ -30,10 +30,10 @@
             $stmt= $this->conn->prepare($consulta);
             $stmt->execute([$tipo_product]);
         }
-        public function insertCompra($num_docum, $id_producto){
-            $consulta="INSERT INTO " .$this->compra . "(num_docum, id_producto) VALUES(?,?)";
+        public function insertCompra($num_docum, $id_producto, $fecha, $hora){
+            $consulta="INSERT INTO " .$this->compra . "(num_docum, id_producto, fecha, hora) VALUES(?,?,?,?)";
             $stmt= $this->conn->prepare($consulta);
-            $stmt->execute([$num_docum, $id_producto]);        
+            $stmt->execute([$num_docum, $id_producto,$fecha,$hora]);        
         }
         
 
@@ -85,10 +85,10 @@
             $stmt= $this->conn->query($query);
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
-        public function updateUser($num_docum, $id_tipoD, $nombre, $telefono, $foto, $num_docum1){
+        public function updateUser($num_docum1, $id_tipoD, $nombre, $telefono, $foto, $num_docum){
             $query= "UPDATE ".$this->table . " SET num_docum=?, id_tipoD=?, nombre=?, telefono=?, foto=? WHERE num_docum=?";
             $stmt=$this->conn->prepare($query);
-            $stmt->execute([$num_docum, $id_tipoD, $nombre, $telefono, $foto, $num_docum1]);
+            $stmt->execute([$num_docum1, $id_tipoD, $nombre, $telefono, $foto, $num_docum]);
         }
     }
 ?>

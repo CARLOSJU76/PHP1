@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Consultar Usuario por Nombre</title>
 </head>
 <body>
-    <h1>Buscar Usuario por Nombre</h1>
+    <h1>Consultar Usuario por Nombre</h1>
     <form action="index.php?action=searchUserByName" method="get">
         <input type="hidden" name="action" value="searchUserByName">
         <label for="name">Nombre</label>

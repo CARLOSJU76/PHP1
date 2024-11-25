@@ -30,11 +30,16 @@
                 move_uploaded_file($_FILES["foto"]["tmp_name"], $target_file);
                 
                 $this->userModel->insertUser($document_number,$document_type, $name, $phone, $photo);
-                header("Location: index.php?action=dashboard");
+                //header("Location: index.php?action=dashboard");
+                echo"<br>El usuario ha sido incluido en la base de datos";
+                echo "<form action='index.php?action=dashboard' method='post' enctype='multipart/form-data'>
+                <button type='submit' name='action' value='dashboard'>Dashboard</button>
+                </form>";
             }
         }
         public function updateUser(){
             if($_SERVER["REQUEST_METHOD"]=="POST"){
+                $num_docum1=$_POST['num_docum1'];
                 $num_docum=$_POST['num_docum'];
                 $id_tipoD= $_POST['id_tipoD'];
                 $nombre= $_POST['nombre'];
@@ -49,7 +54,11 @@
                     $foto=$_POST['foto_actual'];//Mantener la foto actual
                 }
     
-                $this->userModel->updateUser($num_docum, $id_tipoD, $nombre, $telefono, $foto, $num_docum1);
+                $this->userModel->updateUser($num_docum1, $id_tipoD, $nombre, $telefono, $foto, $num_docum);
+                echo"<br>El usuario ha sido actualizado exitosamente";
+                echo "<form action='index.php?action=dashboard' method='post' enctype='multipart/form-data'>
+                <button type='submit' name='action' value='dashboard'>Dashboard</button>
+                </form>";
             }
         }
     public function insertProduct(){
@@ -88,7 +97,16 @@
         if($_SERVER['REQUEST_METHOD']=='POST'){
             $num_docum=$_POST['num_docum'];
             $id_producto=$_POST['id_producto'];
-            $this->userModel->insertCompra($num_docum, $id_producto);
+            
+            $fecha=$_POST['fecha'] ?? null;
+            $hora=$_POST['hora'] ?? null;
+            if (empty($fecha)) {
+                $fecha = null;
+            }
+            if (empty($hora)) {
+                $hora = null;
+            }
+            $this->userModel->insertCompra($num_docum, $id_producto,$fecha,$hora);
             header("Location: index.php?action=dashboard");
         }
     }

@@ -8,46 +8,45 @@
 <body>
 
     <h2>DASHBOARD</h2>
-    <form action="index.php?action=insertUser" method="GET">
-        <button type="submit" name="action" value="insertUser">Insertar Usuario</button>
+
+    <!-- Formulario para seleccionar la opción de usuarios -->
+    <form action="index.php" method="GET">
+        <label for="usuarios">Usuarios:</label>
+        <select name="action" id="usuarios">
+            <option value="insertUser">Insertar Usuario</option>
+            <option value="listUsers">Consultar Usuario</option>
+            <option value="searchUserByName">Consultar Usuario por Nombre</option>
+            <option value="insertTipoD">Insertar Tipo de Documento</option>
+            <option value="openForm">Actualizar Usuario por Número de Documento</option>
+        </select>
+        <button type="submit">Seleccionar</button>
     </form>
 
-    <form action="index.php?action=openForm" method="GET">
-        <button type="submit" name="action" value="openForm">Actualizar Usuario por Número de Documento</button>
+    <br>
+
+    <!-- Formulario para seleccionar la opción de productos -->
+    <form action="index.php" method="GET">
+        <label for="productos">Producto:</label>
+        <select name="action" id="productos">
+            <option value="insertProduct">Insertar Producto</option>
+            <option value="searchProducts">Consultar Productos</option>
+            <option value="searchProductByName">Consultar Producto por Nombre</option>
+            <option value="insertTipoP">Insertar Tipo de Producto</option>
+        </select>
+        <button type="submit">Seleccionar</button>
     </form>
 
-    <form action="index.php?action=insertProduct" method="GET">
-        <button type="submit" name="action" value="insertProduct">Insertar Producto</button>
+    <br>
+
+    <!-- Formulario para seleccionar la opción de compras -->
+    <form action="index.php" method="GET">
+        <label for="compras">Compra:</label>
+        <select name="action" id="compras">
+            <option value="insertCompra">Insertar Compra</option>
+            <option value="searchCompra">Consultar Compras</option>
+        </select>
+        <button type="submit">Seleccionar</button>
     </form>
 
-    <form action="index.php?action=listUsers" method="GET">
-        <button type="submit" name="action" value="listUsers">Consultar Usuario</button>
-    </form>
-
-    <form action="index.php?action=searchUserByName" method="GET">
-        <button type="submit" name="action" value="searchUserByName">Consular Usuario por Nombre</button>
-    </form>
-
-    <form action="index.php?action=searchProducts" method='post'>
-        <button type="submit" name="action" value="searchProducts">Consultar Productos</button>
-    </form>
-
-    <form action="index.php?action=searchProductByName" method="post">
-        <button type="submit" name="action" value="searchProductByName">Consultar producto por nombre</button>
-</form>
-
-    <form action="index.php?action=insertTipoD" method="GET">
-        <button type="submit" name="action" value="insertTipoD">Insertar tipo de documento</button>
-    </form>
-
-    <form action="index.php?action=insertTipoP" method="GET">
-        <button type="submit" name="action" value="insertTipoP">Insertar tipo de producto</button>
-    </form>
-
-    <form action="index.php?action=insertCompra" method="GET">
-        <button type="submit" name="action" value="insertCompra">Insertar Compra</button>
-    </form>
-
-    
 </body>
 </html>
