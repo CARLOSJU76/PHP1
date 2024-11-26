@@ -45,7 +45,7 @@
             break;
 
         case 'listCompraByND':
-            $compras=$userController->listCompraByND();
+            $compras=$userController->getCompraByND();
             include './views/listCompraByND.php';
             break;
 

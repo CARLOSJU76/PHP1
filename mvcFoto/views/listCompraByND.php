@@ -7,8 +7,8 @@
 </head>
 <body>
     <h1>Buscar compra</h1>
-    <form action="index.php?action=searchProductByName" method="get">
-        <input type="hidden" name="action" value="searchProductByName">
+    <form action="index.php?action=listCompraByND" method="get">
+        <input type="hidden" name="action" value="listCompraByND">
         <label for="num_docum">Número de Documento</label>
         <!-- <input type="text" name="num_docum"> -->
         <select name="num_docum" id="num_docum">
@@ -50,7 +50,7 @@
                     <?php endforeach;?>                    
             </tbody>
         </table>
-        <?php elseif(isset($products)):?>
+        <?php elseif(isset($compras)):?>
             <p>No se encontraron productos con ese nombre</p>
 
             <?php endif;?>
