@@ -90,5 +90,24 @@
             $stmt=$this->conn->prepare($query);
             $stmt->execute([$num_docum1, $id_tipoD, $nombre, $telefono, $foto, $num_docum]);
         }
+        public function listCompra(){
+            $query= "SELECT compra.fecha AS Fecha, compra.hora AS Hora, usuarios.nombre AS Usuario, producto.nombre AS Producto FROM " .$this->compra .
+                    " INNER JOIN " .$this->table .
+                    " ON " .$this->compra.".num_docum=". $this->table.".num_docum".
+                    " INNER JOIN " .$this->tablePr.
+                    " ON ".$this->compra.".id_producto= ".$this->tablePr.".id";            
+            $stmt = $this->conn->query($query);
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }
+        public function listCompraByND($num_docum){
+            $query= "SELECT usuarios.nombre AS Cliente, producto.nombre AS Producto, compra.fecha AS Fecha, compra.hora AS Hora FROM " .$this->compra .
+                    " INNER JOIN " .$this->table . " ON ". $this->compra. ".num_docum=". $this->table.".num_docum".
+                    " INNER JOIN " .$this->tablePr . " ON ". $this->compra.".id_producto=".$this->tablePr.".id".
+                    " WHERE " .$this->table.".num_docum=?";
+
+            $stmt= $this->conn->prepare($query);
+            $stmt->execute(['%' . $num_docum . '%']);
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);        
+        }
     }
 ?>

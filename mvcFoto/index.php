@@ -11,6 +11,7 @@
         case 'insertUser':
             if($_SERVER["REQUEST_METHOD"]== "POST"){
                 $userController->insertUser();
+                
             }else {
                 include './views/insert_user.php';
             }
@@ -36,6 +37,16 @@
         case 'searchProducts':
             $products= $userController->getProducts();
             include './views/list_Products.php';
+            break;
+
+        case 'listCompra':
+            $compras=$userController->listCompra();
+            include './views/list_Compra.php';
+            break;
+
+        case 'listCompraByND':
+            $compras=$userController->listCompraByND();
+            include './views/listCompraByND.php';
             break;
 
         case 'searchProductByName':

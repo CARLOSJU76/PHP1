@@ -128,6 +128,10 @@
         $name=$_GET['name'] ?? '';
         return $this->userModel->productsByName($name);
     }
+    public function getCompraByND(){
+        $num_docum=$_GET['num_docum'] ?? '';
+        return $this->userModel->getCompraByND($num_docum);
+    }
     public function getTipoP(){
         return $this->userModel->getTipoP();
     }
@@ -139,6 +143,9 @@
     }
     public function getProducto(){
         return $this->userModel->getProducto();
+    }
+    public function listCompra(){
+        return $this->userModel->listCompra();
     }
     
     }

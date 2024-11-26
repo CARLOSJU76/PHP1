@@ -43,7 +43,8 @@
         <label for="compras">Compra:</label>
         <select name="action" id="compras">
             <option value="insertCompra">Insertar Compra</option>
-            <option value="searchCompra">Consultar Compras</option>
+            <option value="listCompra">Consultar Compras</option>
+            <option value="listCompraByND">Consultar Compras por Número de Documento</option>
         </select>
         <button type="submit">Seleccionar</button>
     </form>
