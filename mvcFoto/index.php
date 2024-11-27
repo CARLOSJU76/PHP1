@@ -93,8 +93,22 @@
                     include './views/updateUserForm.php';
                 }
                 break; 
+            
+            case 'deleteUserByND':
+                $users= $userController->getUserByNumD();
+            include './views/deleteUserByND.php';
+            break;  
 
-        default:
+            case 'deleteUser':
+                    $userController->deleteUser();
+                    break;
+
+
+                // if($_SERVER["REQUEST_METHOD"]=="GET"){
+                //     $userController->deleteUser();
+                // }else{
+
+            default:
             include_once('views/dashboard.php');
             break;
     }

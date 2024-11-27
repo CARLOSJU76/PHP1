@@ -109,5 +109,10 @@
             $stmt->execute([$num_docum]);
             return $stmt->fetchAll(PDO::FETCH_ASSOC);        
         }
+        public function deleteUser($num_docum){
+            $query = "DELETE FROM ".$this->table. " WHERE num_docum= ?";
+            $stmt= $this->conn->prepare($query);
+            $stmt->execute([$num_docum]);
+        }
     }
 ?>

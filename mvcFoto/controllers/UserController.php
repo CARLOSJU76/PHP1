@@ -147,6 +147,14 @@
     public function listCompra(){
         return $this->userModel->listCompra();
     }
-    
+    public function deleteUser(){
+        $num_docum=$_GET['num_docum'] ?? '';
+        echo"El Usuario ha sido removido de la base de datos";
+        echo "<form action='index.php?action=dashboard' method='post' enctype='multipart/form-data'>
+                <button type='submit' name='action' value='dashboard'>Dashboard</button>
+                </form>";
+        return $this->userModel->deleteUser($num_docum);        
     }
+    
+}
 ?>

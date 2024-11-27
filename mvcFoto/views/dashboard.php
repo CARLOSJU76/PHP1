@@ -18,6 +18,7 @@
             <option value="searchUserByName">Consultar Usuario por Nombre</option>
             <option value="insertTipoD">Insertar Tipo de Documento</option>
             <option value="openForm">Actualizar Usuario por Número de Documento</option>
+            <option value="deleteUserByND">Quitar Usuario</option>
         </select>
         <button type="submit">Seleccionar</button>
     </form>
