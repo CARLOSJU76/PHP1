@@ -3,28 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Lista de automóviles registrados</title>
 </head>
 <body>
-    <h1>Lista de Usuarios</h1>
+    <h1>Lista de Automóviles</h1>
     <table border="1">
         <thead>
             <tr>
-                <th>Número de documento</th>
-                <th>Tipo de documento</th>
-                <th>Nombre</th>
-                <th>Teléfono</th>
-                <th>Foto</th>
+                <th>Placa</th>
+                <th>Color</th>
+                <th>Modelo</th>
+                <th>Marca</th>
+                <th>Línea</th>
             </tr>
         </thead>
         <tbody>
-            <?php foreach($users as $user): ?>
+            <?php foreach($autos as $auto): ?>
             <tr>
-                <td><?=$user['num_docum']?></td>
-                <td><?=$user['id_tipoD']?></td>
-                <td><?=$user['nombre']?></td>
-                <td><?=$user['telefono']?></td>
-                <td><img src="photo/<?= $user['foto']; ?>" width="100" alt="Foto"></td>
+                <td><?=$auto['Placa']?></td>
+                <td><?=$auto['Color']?></td>
+                <td><?=$auto['Modelo']?></td>
+                <td><?=$auto['Marca']?></td>
+                <td><?=$auto['Línea']?></td>
+                
             </tr>
             <?php endforeach; ?>
         </tbody>

@@ -15,7 +15,7 @@
         <label for="id_color">Color</label>
         <!-- <input type="text" name="tipo_documento" required><br> -->
          <select name="id_color" id="id_color">
-            <option value="">Elija</option>
+            <option value="">Elija el Color</option>
             <?php
                 include_once('./controllers/UserController.php');
                     $color1= new $userController();
@@ -34,10 +34,8 @@
         
         <label for="id_marca">Marca</label>
         <!-- <input type="text" name="id_marca" required><br> -->
-        <label for="id_marca">Color</label>
-        <!-- <input type="text" name="tipo_documento" required><br> -->
-         <select name="id_marca" id="id_marca">
-            <option value="">Elija marca</option>
+            <select name="id_marca" id="id_marca">
+            <option value="">Elija la marca</option>
             <?php
                 include_once('./controllers/UserController.php');
                     $marca1= new $userController();
@@ -51,7 +49,20 @@
          </select><br>
 
         <label for="id_linea">Línea</label>
-        <input type="text" name="id_linea" required><br>
+        <!-- <input type="text" name="id_linea" required><br> -->
+        <select name="id_linea" id="id_linea">
+            <option value="">Elija la LÍNEA</option>
+            <?php
+                include_once('./controllers/UserController.php');
+                    $linea1= new $userController();
+                    $arrayLinea= $linea1->getLinea();
+                
+                foreach($arrayLinea as $lin){
+                    echo "<option value='".htmlspecialchars($lin['id'])."'>"
+                    .htmlspecialchars($lin['linea'])."</option>";
+                }
+            ?>
+         </select><br>
 
         <input type="submit" value="Guardar"><br>
 

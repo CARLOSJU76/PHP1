@@ -16,8 +16,10 @@
             <option value="insertAutomovil">Insertar automovil</option>
             <option value="insertColor">Insertar Color</option>
             <option value="insertMarca">Insertar Marca</option>
-            <!-- <option value="listUsers">Consultar Usuario</option>
-            <option value="searchUserByName">Consultar Usuario por Nombre</option>
+            <option value="insertLinea">Insertar Línea</option>
+            <option value="listAutomovil">Consultar Automóviles</option>
+            <option value="searchAutoByPlaca">Consultar Automóvli por Placa</option>
+            <!-- 
             
             <option value="openForm">Actualizar Usuario por Número de Documento</option>
             <option value="deleteUserByND">Quitar Usuario</option> -->

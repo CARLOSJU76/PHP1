@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consulta Compras por Número de documento</title>
+    <title>Consulta de Automóviles por Placa</title>
 </head>
 <body>
-    <h1>Buscar compra</h1>
-    <form action="index.php?action=listCompraByND" method="get">
-        <input type="hidden" name="action" value="listCompraByND">
-        <label for="num_docum">Número de Documento</label>
+    <h1>Buscar automóvil</h1>
+    <form action="index.php?action=searchAutoByPlaca" method="get">
+        <input type="hidden" name="action" value="searchAutoByPlaca">
+        <label for="num_docum">Placa</label>
         <!-- <input type="text" name="num_docum"> -->
-        <select name="num_docum" id="num_docum">
-            <option value="">Elija un número de Documento</option>
+        <select name="placa" id="placa">
+            <option value="">Elija la placa</option>
             <?php
                 include_once('./controllers/UserController.php');
-                $usuarios= new UserController();
-                $arrayUser= $usuarios->getNumD();
+                $placas= new UserController();
+                $arrayPlacas= $usuarios->getNumD();
                 
                 foreach($arrayUser as $user){
                     echo"<option value='" .htmlspecialchars($user['num_docum'])."'>".

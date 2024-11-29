@@ -33,23 +33,23 @@
             }
             break;
 
-        // case'insertProduct':
-        //     if($_SERVER["REQUEST_METHOD"]=="POST"){
-        //         $userController->insertProduct();
-        //     }else{
-        //         include './views/insert_product.php';
-        //     }
-        //         break;
+        case'insertLinea':
+            if($_SERVER["REQUEST_METHOD"]=="POST"){
+                 $userController->insertLinea();
+            }else{
+                 include './views/insert_linea.php';
+            }
+            break;
 
-        // case'listUsers':
-        //     $users= $userController->listUsers();
-        //     include './views/list_users.php';
-        //     break;
+        case'listAutomovil':
+            $autos= $userController->listAutomovil();
+            include './views/list_automovil.php';
+            break;
 
-        // case 'searchUserByName':
-        //     $users= $userController->UsersByName();
-        //     include './views/list_user_By_Name_Form.php';
-        //     break;   
+        case 'searchAutoByPlaca':
+            $autos= $userController->getAutoByPlaca();
+            include './views/auto_By_Placa.php';
+            break;   
             
         // case 'searchProducts':
         //     $products= $userController->getProducts();

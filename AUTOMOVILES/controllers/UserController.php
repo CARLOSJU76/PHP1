@@ -16,7 +16,7 @@
             $this->userModel= new UserModel($this->db);
         }
          
-        public function insertUser(){
+        public function insertAutomovil(){
             if($_SERVER["REQUEST_METHOD"]=="POST"){
                 $placa=$_POST['placa'];
                 $id_color=$_POST['id_color'];
@@ -57,6 +57,25 @@
         public function getMarca(){
             return $this->userModel->getMarca();
         }
+        public function insertLinea(){
+         if($_SERVER['REQUEST_METHOD']=='POST'){
+            $lineaM=$_POST['linea'];     
+
+             $this->userModel->insertLinea($lineaM);
+             header("Location: index.php?action=dashboard");
+            }
+        }
+        public function getLinea(){
+         return $this->userModel->getLinea();
+        }
+        public function listAutomovil(){
+            return $this->userModel->getAutomovil();
+        }
+        public function getAutoByPlaca(){
+            $placa=$_GET['placa'] ?? '';
+            return $this->userModel->getAutoByPlaca($placa);
+        }
+   
     //     public function updateUser(){
     //         if($_SERVER["REQUEST_METHOD"]=="POST"){
     //             $num_docum1=$_POST['num_docum1'];
@@ -81,23 +100,7 @@
     //             </form>";
     //         }
     //     }
-    // public function insertProduct(){
-    //     if($_SERVER['REQUEST_METHOD']=='POST'){
-    //         $nombre=$_POST['nombre'];
-    //         $marca=$_POST['marca'];
-    //         $id_tipoP=$_POST['id_tipoP'];
-    //         $precio=$_POST['precio'];
-
-    //         $photo= $_FILES['foto']['name'];
-    //             $target_dir="photo/";
-    //             $target_file= $target_dir .basename($photo);
-    //             move_uploaded_file($_FILES["foto"]["tmp_name"], $target_file);
-
-    //         $this->userModel->insertProduct($nombre,$marca, $id_tipoP, $precio, $photo);
-    //         header("Location: index.php?action=dashboard");
-    //     }
-    // }
-   
+    
     
     // public function insertCompra(){
     //     if($_SERVER['REQUEST_METHOD']=='POST'){
@@ -116,20 +119,13 @@
     //         header("Location: index.php?action=dashboard");
     //     }
     // }
-    // public function listUsers(){
-    //     return $this->userModel->getUsers();
-    // }
-    // public function UsersByName(){
-    //     $name=$_GET['name'] ?? '';
-    //     return $this->userModel->getUsersByName($name);
-    // }
+    
+    
     // public function getUserByNumD(){
     //     $num_docum=$_GET['num_docum'] ??'';
     //     return $this->userModel->getUserByNumD($num_docum);
     // }
-    // public function getProducts(){
-    //     return $this->userModel->getProducts();
-    // }
+    
     // public function productsByName(){
     //     $name=$_GET['name'] ?? '';
     //     return $this->userModel->productsByName($name);
