@@ -11,7 +11,7 @@
 
     <!-- Formulario para seleccionar la opción de usuarios -->
     <form action="index.php" method="GET">
-        <label for="automovil">Usuarios:</label>
+        <label for="automovil">Automoviles:</label><br>
         <select name="action" id="automovil">
             <option value="insertAutomovil">Insertar automovil</option>
             <option value="insertColor">Insertar Color</option>
@@ -19,10 +19,8 @@
             <option value="insertLinea">Insertar Línea</option>
             <option value="listAutomovil">Consultar Automóviles</option>
             <option value="searchAutoByPlaca">Consultar Automóvli por Placa</option>
-            <!-- 
-            
-            <option value="openForm">Actualizar Usuario por Número de Documento</option>
-            <option value="deleteUserByND">Quitar Usuario</option> -->
+            <option value="openForm">Actualizar Vehículo por Placa</option>
+            <option value="deleteCar">Quitar Automovil</option>
         </select>
         <button type="submit">Seleccionar</button>
     </form>

@@ -44,6 +44,12 @@
                     $stmt = $this->conn->query($query);
                     return $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
+        public function getPlaca(){
+            $query = "SELECT placa FROM " . $this->automovil;
+            $stmt = $this->conn->query($query);
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
 
         public function getAutomovil(){
             $consulta= "SELECT automovil.placa AS Placa, color.color AS Color, automovil.modelo AS Modelo, marca.marca AS Marca, linea.linea AS Línea FROM " .$this->automovil .
@@ -63,80 +69,18 @@
             $stmt->execute(['%' . $placa . '%']);
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
-
-    //     public function insertTipoD($tipo_documento){
-    //         $consulta="INSERT INTO " .$this->tipoD . "(tipo_documento) VALUES (?)";
-    //         $stmt= $this->conn->prepare($consulta);
-    //         $stmt->execute([$tipo_documento]);
-    //     }
-    //     
-    //     public function insertCompra($num_docum, $id_producto, $fecha, $hora){
-    //         $consulta="INSERT INTO " .$this->compra . "(num_docum, id_producto, fecha, hora) VALUES(?,?,?,?)";
-    //         $stmt= $this->conn->prepare($consulta);
-    //         $stmt->execute([$num_docum, $id_producto,$fecha,$hora]);        
-    //     }
-        
+        public function updateCar($placa1, $id_color, $modelo, $id_marca, $id_linea, $placa){
+                    $query= "UPDATE ".$this->automovil . " SET placa=?, id_color=?, modelo=?, id_marca=?, id_linea=? WHERE placa=?";
+                    $stmt=$this->conn->prepare($query);
+                    $stmt->execute([$placa1, $id_color, $modelo, $id_marca, $id_linea, $placa]);
+        }
 
     
-    
-    //     public function getUserByNumD($num_docum){
-    //         $query= "SELECT * FROM " .$this->table . " WHERE num_docum=?";
-    //         $stmt= $this->conn->prepare($query);
-    //         $stmt->execute([$num_docum]);
-    //         return  $stmt->fetchAll(PDO::FETCH_ASSOC);
-    //     }
-    //     public function getProducts(){
-    //         $query="SELECT * FROM " .$this->tablePr;
-    //         $stmt= $this->conn->query($query);
-    //         return $stmt->fetchAll(PDO::FETCH_ASSOC);
-    //     }
-    //     public function productsByName($name){
-    //         $query= "SELECT * FROM " .$this->tablePr . " WHERE nombre LIKE ?";
-    //         $stmt= $this->conn->prepare($query);
-    //         $stmt->execute(['%' . $name . '%']);
-    //         return $stmt->fetchAll(PDO::FETCH_ASSOC);
-    //     }
-    //     
-    //     public function getTipoD(){
-    //         $query= "SELECT * FROM " .$this->tipoD;
-    //         $stmt= $this->conn->query($query);
-    //         return $stmt->fetchAll(PDO::FETCH_ASSOC);
-    //     }
-    //     
-    //     public function getProducto(){
-    //         $query= "SELECT id, nombre FROM " .$this->tablePr;
-    //         $stmt= $this->conn->query($query);
-    //         return $stmt->fetchAll(PDO::FETCH_ASSOC);
-    //     }
-    //     public function updateUser($num_docum1, $id_tipoD, $nombre, $telefono, $foto, $num_docum){
-    //         $query= "UPDATE ".$this->table . " SET num_docum=?, id_tipoD=?, nombre=?, telefono=?, foto=? WHERE num_docum=?";
-    //         $stmt=$this->conn->prepare($query);
-    //         $stmt->execute([$num_docum1, $id_tipoD, $nombre, $telefono, $foto, $num_docum]);
-    //     }
-    //     public function listCompra(){
-    //         $query= "SELECT compra.fecha AS Fecha, compra.hora AS Hora, usuarios.nombre AS Usuario, producto.nombre AS Producto FROM " .$this->compra .
-    //                 " INNER JOIN " .$this->table .
-    //                 " ON " .$this->compra.".num_docum=". $this->table.".num_docum".
-    //                 " INNER JOIN " .$this->tablePr.
-    //                 " ON ".$this->compra.".id_producto= ".$this->tablePr.".id";            
-    //         $stmt = $this->conn->query($query);
-    //         return $stmt->fetchAll(PDO::FETCH_ASSOC);
-    //     }
-    //     public function getCompraByND($num_docum){
-    //         $query= "SELECT usuarios.nombre AS Cliente, producto.nombre AS Producto, compra.fecha AS Fecha, compra.hora AS Hora FROM " .$this->compra .
-    //                 " INNER JOIN " .$this->table . " ON ". $this->compra. ".num_docum=". $this->table.".num_docum".
-    //                 " INNER JOIN " .$this->tablePr . " ON ". $this->compra.".id_producto=".$this->tablePr.".id".
-    //                 " WHERE " .$this->table.".num_docum=?";
-
-    //         $stmt= $this->conn->prepare($query);
-    //         $stmt->execute([$num_docum]);
-    //         return $stmt->fetchAll(PDO::FETCH_ASSOC);        
-    //     }
-    //     public function deleteUser($num_docum){
-    //         $query = "DELETE FROM ".$this->table. " WHERE num_docum= ?";
-    //         $stmt= $this->conn->prepare($query);
-    //         $stmt->execute([$num_docum]);
-    //     }
+        public function deleteCar($placa){
+            $query = "DELETE FROM ".$this->automovil. " WHERE placa= ?";
+            $stmt= $this->conn->prepare($query);
+            $stmt->execute([$placa]);
+        }
     
 }
 ?>
