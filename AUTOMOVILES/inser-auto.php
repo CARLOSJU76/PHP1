@@ -92,10 +92,11 @@
                 </thead>
                 <tbody>
                     <td>
-                        
-                        <tr><input type="text" name="placa" id="placa" placeholder="Ingrese la Placa" class="form-control" required></tr>
+                        <tr><label for="placa">Placa:</label></tr>
+                        <tr><input type="text" name="placa" id="placa" class="form-control" required></tr>
                     </td>
                     <td>
+                        <tr><label for="id-color">Color:</label></tr>
                         <tr> <select name="id_color" id="id_color">
                                 <option value="">Elija el Color</option>
                                 <?php include_once('./controllers/UserController.php');
@@ -107,16 +108,18 @@
                                     .htmlspecialchars($col['color'])."</option>";
                                     }
                                 ?>
-                            </select>
-                        </tr>
-                    </td>
-            
-                    <td>
-                        
-                        <tr><input type="number" name="modelo" id="modelo" placeholder="Ingrese el modelo" class="form-control" required></tr>
+                            </select></tr>
                     </td>
                     <td>
-                        
+                        <tr><label for="color">Color:</label></tr>
+                        <tr><input type="text" name="color" id="color" class="form-control" required></tr>
+                    </td>
+                    <td>
+                        <tr><label for="modelo">Modelo:</label></tr>
+                        <tr><input type="number" name="modelo" id="modelo" class="form-control" required></tr>
+                    </td>
+                    <td>
+                        <tr><label for="marca">Marca:</label></tr>
                         <tr><select name="id_marca" id="id_marca">
                                 <option value="">Elija la marca</option>
                                     <?php include_once('./controllers/UserController.php');
