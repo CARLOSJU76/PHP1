@@ -1,0 +1,78 @@
+body {
+    width: 100%;
+    height: 100%;
+    background-color: #f7ff88;
+    font-family: 'calibri', sans-serif;
+}
+
+.container {
+    position: relative;
+    width: 80%;
+    margin: auto;
+    background-color: #ff963e;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+h1 {
+    color: #4b5320; /* Verde militar */
+    font-family: 'calibri', sans-serif;
+}
+
+.table {
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+.table th {
+    background-color: #4b5320; /* Verde militar */
+    color: white;
+    border-radius: 7px;
+}
+
+.table th, .table td {
+    text-align: center;
+    padding: 15px;
+    font-size: 1rem;
+}
+
+.table-bordered {
+    border: 1px solid #ddd;
+}
+
+.btn-custom {
+    background-color: #4b5320;
+    color: white;
+    border-radius: 5px;
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+    border: none;
+}
+
+.btn-custom:hover {
+    background-color: #3c421c;
+}
+
+form {
+    margin-top: 20px;
+}
+
+button {
+    background-color: #4b5320;
+    color: white;
+    border-radius: 5px;
+    font-size: 1rem;
+    padding: 0.5rem 1.5rem;
+    border: none;
+}
+
+button:hover {
+    background-color: #3c421c;
+}
+input, select {
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    border-radius: 7px;
+}

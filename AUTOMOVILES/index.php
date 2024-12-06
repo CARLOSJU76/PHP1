@@ -75,7 +75,7 @@
         
 
         default:
-        include_once('views/dashboard.php');
+        include_once('views/dashboard.html');
         break;
     }
 
